@@ -35,11 +35,11 @@ function buttonClicked(event) {
          console.log("its a addition!");
          /*
          operatorG = input;
-         resultG = compute(resultG,parseInt(output.innerHTML), operatorG)//resultG + parseInt(output.innerHTML);
+         resultG = compute(resultG,parseFloat(output.innerHTML), operatorG)//resultG + parseFloat(output.innerHTML);
          output.innerHTML = ''; 
          */
 
-         number1G = parseInt(output.innerHTML);
+         number1G = parseFloat(output.innerHTML);
          console.log("this is number 1", number1G);
          output.innerHTML = '';
          console.log("this is our operator input", input);
@@ -51,11 +51,11 @@ function buttonClicked(event) {
          console.log("It's substraction");
          /*
          operatorG = input;
-         resultG = compute(resultG,parseInt(output.innerHTML), operatorG);
+         resultG = compute(resultG,parseFloat(output.innerHTML), operatorG);
          output.innerHTML = ''; 
          */
          
-         number1G = parseInt(output.innerHTML);
+         number1G = parseFloat(output.innerHTML);
          console.log("this is number 1", number1G);
          output.innerHTML = '';
          console.log("this is our operator input", input);
@@ -65,7 +65,7 @@ function buttonClicked(event) {
          break;
        case '*':
          console.log("It's multiplicaton");
-         number1G = parseInt(output.innerHTML);
+         number1G = parseFloat(output.innerHTML);
          console.log("this is number 1", number1G);
          output.innerHTML = '';
          console.log("this is our operator input", input);
@@ -74,7 +74,7 @@ function buttonClicked(event) {
          break;
        case '/':
           console.log("It's division!");
-          number1G = parseInt(output.innerHTML);
+          number1G = parseFloat(output.innerHTML);
           console.log("this is number 1", number1G);
           output.innerHTML = '';
           console.log("this is our operator input", input);
@@ -83,7 +83,7 @@ function buttonClicked(event) {
           break;
        case '+/-':
           console.log("It's flip!");
-          output.innerHTML = '-' + output.innerHTML;
+          output.innerHTML = -output.innerHTML;
           break;
        case '.':
           console.log("it's decimal");
@@ -91,7 +91,7 @@ function buttonClicked(event) {
           break;
        case '%':
           console.log("It's percent!");
-          output.innerHTML = (parseInt(output.innerHTML)/100).toString();    
+          output.innerHTML = (parseFloat(output.innerHTML)/100).toString();    
           break;
        case 'AC':
           console.log("it's clear!");
@@ -102,7 +102,7 @@ function buttonClicked(event) {
           break;
        case '=':
           console.log("It's equal");
-          number2G = parseInt(output.innerHTML); 
+          number2G = parseFloat(output.innerHTML); 
           console.log('this is number 2', number2G);
           console.log('this is number 1', number1G);
           console.log('this is our operator', operatorG);
