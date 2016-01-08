@@ -117,7 +117,13 @@ function buttonClicked(event) {
           break;
        default:
           console.log("It's a number");
-          output.innerHTML = output.innerHTML + button.innerHTML;
+          if(input === '0') {
+            output.innerHTML = button.innerHTML;	
+          }
+          else {
+            output.innerHTML = output.innerHTML + button.innerHTML;	
+          }
+          
           break;
     } 
 }  // buttonClicked(event)
