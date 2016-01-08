@@ -6,17 +6,15 @@ var number2G = 0;
 var operatorG = '';
 var resultG = 0; 
 var operatorActivatedFlagG = false; 
+var startOverFlagG = true; 
 
 document.addEventListener('DOMContentLoaded', function(){
 
-
     var buttons = document.getElementsByClassName('buttons');
-    //button.addEventListener('click', buttonClicked);
-
+    
     for(var i = 0; i < buttons.length; i++) {
        buttons[i].addEventListener('click', buttonClicked);
     }
-
 
 });
 
@@ -86,8 +84,9 @@ function buttonClicked(event) {
           output.innerHTML = -output.innerHTML;
           break;
        case '.':
-          console.log("it's decimal");
-          output.innerHTML = output.innerHTML + '.';
+          if(output.innerHTML.indexOf('.') === -1) {
+          	 output.innerHTML = output.innerHTML + '.';
+          } 
           break;
        case '%':
           console.log("It's percent!");
@@ -114,16 +113,30 @@ function buttonClicked(event) {
           //number1G = resultG; 
           number2G = 0; 
           resultG = 0; 
+          startOverFlagG = true;
           break;
        default:
           console.log("It's a number");
-          if(input === '0') {
-            output.innerHTML = button.innerHTML;	
+          
+          if(startOverFlagG === true) {
+             output.innerHTML = button.innerHTML;
+             startOverFlagG = false;
           }
           else {
-            output.innerHTML = output.innerHTML + button.innerHTML;	
+          	 output.innerHTML = output.innerHTML + button.innerHTML;
+          }        
+          /*
+          if(input === '0' && startOverFlagG === true) {
+            output.innerHTML = button.innerHTML;
           }
-          
+          else if(input !== '0' && startOverFlagG === true) {
+            output.innerHTML = output.innerHTML;	
+            startOverFlagG = false;	
+          } 
+          else {
+          	output.innerHTML = output.innerHTML + button.innerHTML;	
+          }
+          */
           break;
     } 
 }  // buttonClicked(event)
