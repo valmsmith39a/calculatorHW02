@@ -1,0 +1,12 @@
+#output {
+	background-color: #ccffff;
+	width:255px;
+	height:30px;
+	text-align:right;
+}
+
+.buttons {
+	background-color: orange;
+	width:10%;
+	height:10%;
+}
